@@ -1,51 +1,51 @@
-package Tp2 ;
+package Tp2;
 
 public class receta {
-    private String nombre;
-    private int tiempo;
-    private String dificultad;
-    private int cantIngredientes;
+        private String nombre;
+        private int tiempo; 
+        private String dificultad;
+        private int cantIngredientes;
 
-    public receta (String nombre, int tiempo, String dificultad, int cantIngredientes){
-    this.nombre = nombre;
-    this.tiempo = tiempo;
-    this.dificultad = dificultad;
-    this.cantIngredientes = cantIngredientes;
-    }
+        public receta ( String nombre, int tiempo, String dificultad, int cantIngredientes) {
+        this.nombre= nombre;
+        this.tiempo= tiempo;
+        this.dificultad= dificultad;
+        this.cantIngredientes= cantIngredientes;
+        }                                   
         public void setNombre (String nombre){
-            this.nombre = nombre;
+        this.nombre= nombre ;
         }
         public String getNombre (){
-            return this.nombre ;
+                 return this.nombre ;
         }
-        public void setTiempo (int tiempo){
-            this.tiempo = tiempo;
+        public void setTiempo ( int tiempo){
+                this.tiempo= tiempo ;
         }
         public int getTiempo (){
-            return this.tiempo ;
+                return this.tiempo ;
         }
         public void setDificultad (String dificultad){
-            this.dificultad = dificultad;
+        this.dificultad= dificultad;
         }
-        public int getDificultad (){
-            return this.dificultad ;
+        public String getDificultad (){
+        return this.dificultad;
         }
-        public void setCantIngredientes (int cantIngredientes){
-            this.cantIngredientes = cantIngredientes;
+        public void setCantIngredientes (int cantIngredientes) {
+        this.cantIngredientes= cantIngredientes;
         }
         public int getCantIngredientes (){
-            return this.cantIngredientes ;
+        return this.cantIngredientes;
         }
-        public String esRapido() {
-         if (this.tiempo < 30);{
-            return "Receta rapida";
-         }else if (this.tiempo < 60)}
-            return "Receta intermedia";
-        } else {
-            return "Receta larga";
-        }
-         
-    }
-
-
+        public String esTiempo() {
+                if (this.tiempo < 30 ){
+                        return "receta rapida";
+                }else if (this.tiempo < 60) {
+                        return "receta intermedia";
+                }else{
+                        return "receta larga";
+                }
+                }
+                public void aumentarTiempo(int minutos) {
+                        this.tiempo += minutos;
+                }   
 }
