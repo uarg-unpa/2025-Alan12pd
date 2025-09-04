@@ -1,20 +1,27 @@
+import java.util.Scanner;
 
 public class ejercicio5 {
     public static void main(String[] args) {
-        String Dia1 = "L" ;
-        String Dia2 = "M" ;
-        String Dia3 = "I" ;
-        String Dia4 = "J" ;
-        String Dia5 = "V" ;
-        String Dia6 = "S" ;
-        String Dia7 = "D" ;
-
+        Scanner scanner = new Scanner(System.in);
         System.out.println("ingrese un dia de la semana");
-        String L = ;
-        
+        String dia = scanner.nextLine().toUpperCase();
+        switch (dia) {
+            case "M":
+            case "I":
+            case "J":
+             System.out.println("HOY TENGO RESOLUCIÓN");
+                break;
+            case "L":
+            case "V":
+            case "S":
+            case "D":
+                System.out.println("Hoy no tengo resolución");
+                break;
+            default:
+                System.out.println("Día inválido");
+                break;
+        }
 
-
-
-
+        scanner.close();
     }
 }
