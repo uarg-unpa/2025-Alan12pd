@@ -1,19 +1,20 @@
 package TP2;
 
-    public class ClaseTelevisor {
+public class ClaseTelevisor {
+    private static final int VOLUMEN_MINIMO = 0;
+    private static final int VOLUMEN_MAXIMO = 100;
+    private static final int CANAL_MINIMO = 1;
+    private static final int CANAL_MAXIMO = 999;
     private boolean encendido;
     private int canal;
+    private int canalAnterior;
     private int volumen;
 
-    private final int VOLUMEN_MAXIMO = 100;
-    private final int VOLUMEN_MINIMO = 0;
-    private final int CANAL_MAXIMO = 999;
-    private final int CANAL_MINIMO = 1;
-
-    public ClaseTelevisor() {
-        this.encendido = false;
-        this.canal = 1; 
-        this.volumen = 10; 
+    public ClaseTelevisor(boolean encendido, int canal, int volumen) {
+        this.encendido = encendido;
+        this.canal = (canal >= CANAL_MINIMO && canal <= CANAL_MAXIMO) ? canal : 1;
+        this.volumen = (volumen >= VOLUMEN_MINIMO && volumen <= VOLUMEN_MAXIMO) ? volumen : 10;
+        this.canalAnterior = this.canal;
     }
 
     public void encender() {
@@ -63,6 +64,7 @@ package TP2;
     public void cambiarCanal(int nuevoCanal) {
         if (encendido) {
             if (nuevoCanal >= CANAL_MINIMO && nuevoCanal <= CANAL_MAXIMO) {
+                canalAnterior = canal; // guardamos el actual
                 canal = nuevoCanal;
                 System.out.println("Canal cambiado a: " + canal);
             } else {
@@ -73,11 +75,45 @@ package TP2;
         }
     }
 
+    public void volverCanalAnterior() {
+        if (encendido) {
+            int temp = canal;
+            canal = canalAnterior;
+            canalAnterior = temp;
+            System.out.println("Volviste al canal: " + canal);
+        } else {
+            System.out.println("Enciende el televisor primero.");
+        }
+    }
+    
     public void mostrarEstado() {
         System.out.println("Estado del Televisor:");
         System.out.println("Encendido: " + (encendido ? "Sí" : "No"));
         System.out.println("Canal actual: " + canal);
         System.out.println("Volumen actual: " + volumen);
     }
-}
 
+    public boolean isEncendido() {
+        return encendido;
+    }
+
+    public int getCanal() {
+        return canal;
+    }
+
+    public int getVolumen() {
+        return volumen;
+    }
+
+    public void setCanal(int canal) {
+        if (canal >= CANAL_MINIMO && canal <= CANAL_MAXIMO) {
+            this.canal = canal;
+        }
+    }
+
+    public void setVolumen(int volumen) {
+        if (volumen >= VOLUMEN_MINIMO && volumen <= VOLUMEN_MAXIMO) {
+            this.volumen = volumen;
+        }
+    }
+}
