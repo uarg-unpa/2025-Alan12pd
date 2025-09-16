@@ -12,8 +12,8 @@ package TP2;
 
     public ClaseTelevisor() {
         this.encendido = false;
-        this.canal = 1; // canal por defecto
-        this.volumen = 10; // volumen por defecto
+        this.canal = 1; 
+        this.volumen = 10; 
     }
 
     public void encender() {
