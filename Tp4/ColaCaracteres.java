@@ -2,12 +2,63 @@ package Tp4;
 
 public class ColaCaracteres {
     private char[] elementos;
-    private int frente = 0;
-    private int fin = -1;
+    private int frente;
+    private int fin;
     private int max = 10;
 
     public ColaCaracteres() {
-
+        elementos = new char[max];
+        frente = 0;
+        fin = -1;
     }
+
+    public boolean estaVacia() {
+        return fin < frente;
+    }
+
+    public boolean estaLlena() {
+        return fin - frente + 1 == max;
+    }
+
+    public boolean encolar(char c) {
+        if (estaLlena()) {
+            return false;
+        }
+        fin++;
+        elementos[fin] = c;
+        return true;
+    }
+
+    public Character desencolar() {
+        if (estaVacia()) {
+            return null;
+        }
+        char eliminado = elementos[frente];
+        for (int i = frente; i < fin; i++) {
+            elementos[i] = elementos[i + 1];
+        }
+        fin--;
+        return eliminado;
+    }
+
     
+    public Character peek() {
+        if (estaVacia()) {
+            return null;
+        }
+        
+        return Character.valueOf(elementos[frente]);
+    }
+
+    public void mostrarCola() {
+        if (estaVacia()) {
+            System.out.println("Cola vacía");
+        } else {
+            System.out.print("Cola: ");
+            for (int i = frente; i <= fin; i++) {
+                System.out.print(elementos[i] + " ");
+            }
+            System.out.println();
+        }
+    }
 }
