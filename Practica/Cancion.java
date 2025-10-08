@@ -75,10 +75,10 @@ public class Cancion {
                      
                         public static void main(String args[]) { 
 
-                            //invocar escaner
+                            
                             Scanner sc = new Scanner (System.in);
                             
-                            //crear nuevo album
+                            
                             System.out.println("ingrese nombre del album");
                             String album = sc.nextLine();
                             sc.nextLine();
