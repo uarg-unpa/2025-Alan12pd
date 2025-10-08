@@ -17,7 +17,7 @@ public class ColaCaracteres {
     }
 
     public boolean estaLlena() {
-        return fin - frente + 1 == max;
+        return fin == max;
     }
 
     public boolean encolar(char c) {
@@ -48,17 +48,5 @@ public class ColaCaracteres {
         }
         
         return Character.valueOf(elementos[frente]);
-    }
-
-    public void mostrarCola() {
-        if (estaVacia()) {
-            System.out.println("Cola vacía");
-        } else {
-            System.out.print("Cola: ");
-            for (int i = frente; i <= fin; i++) {
-                System.out.print(elementos[i] + " ");
-            }
-            System.out.println();
-        }
     }
 }
