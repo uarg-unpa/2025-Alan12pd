@@ -49,16 +49,4 @@ public String peek() {
     return elementos[frente];
 }
 
-public void mostrarCola() {
-    if (estaVacia()) {
-        System.out.println("Cola vacía");
-    } else {
-        System.out.print("cola: ");
-        for (int i = 0; i < cantidad; i++) {
-            int idx = (frente + i) % max;
-            System.out.print(elementos[idx] + " ");
-        }
-        System.out.println();
-    }
-  }
 }

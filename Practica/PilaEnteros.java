@@ -16,8 +16,6 @@ public class PilaEnteros {
     return (cima == -1);
     }
     
-
-  
     public boolean estaLlena() {
         return (cima == MAX - 1);
     }

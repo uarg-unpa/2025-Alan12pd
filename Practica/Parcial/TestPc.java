@@ -11,12 +11,12 @@ public class TestPc{
     public TestPc(){
 
     }
-    public to String(){
+    public String toString(){
         return "Marca: " + this.marca + ", Procesador: " + this.procesador + ", Precio: $" + this.precio + ", RAM: " + this.ram + "GB";
 
     }
 
-        public void main(String[] args){
+        public static void main(String[] args){
                         Scanner sn = new Scanner (System.in);
                             System.out.println("ingrese la marca de la pc");
                             String marca = sn.nextLine();

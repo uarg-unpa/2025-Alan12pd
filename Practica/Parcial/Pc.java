@@ -64,7 +64,7 @@ public class Pc{
                 }
                   public void main(String[] args){
 
-                    Pc pc1 = new Pc(Nombre, Procesador, Precio, Ram);
+                    Pc pc1 = new Pc();
                     Pc pc2 = new Pc();
                         Scanner sn = new Scanner (System.in);
                             System.out.println("ingrese la marca de la pc");

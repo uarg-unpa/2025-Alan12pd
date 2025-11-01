@@ -15,6 +15,22 @@ public class PilaReal {
     public boolean estaVacía(){
     return (cima == -1);
     }
+    }
     
+    public boolean estaLlena() {
+        return (cima == MAX - 1);
+    }
+
+    
+    public void meter(int elem) {
+        cima++;
+        elementos[cima] = elem;
+    }
+
+    public int sacar() {
+        int elem = elementos[cima];
+        cima--;
+        return elem;
+    }
     
 }

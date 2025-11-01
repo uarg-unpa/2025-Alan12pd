@@ -24,8 +24,8 @@ public class Palabra {
         elements[cima] = elem;
     }
 
-    public int sacar() {
-        int elem = elements[cima];
+    public char sacar() {
+        char elem = elements[cima];
         cima--;
         return elem;
     }

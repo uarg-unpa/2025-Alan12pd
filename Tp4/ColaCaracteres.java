@@ -48,5 +48,6 @@ public class ColaCaracteres {
         }
         
         return Character.valueOf(elementos[frente]);
+    
     }
 }
