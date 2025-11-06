@@ -1,26 +1,56 @@
-
 package Tp3;
 
 import java.util.Scanner;
 
 public class TestPila {
     public static void main(String[] args) {
-        Scanner Sc = new Scanner(System.in);
-    System.out.print("Ingresar elemento: ");
-    String Pila = Sc.nextLine();
+        Scanner entrada = new Scanner(System.in);
+        Pila pila = new Pila();
 
-        Pila P1 = new Pila ();
+        int opcion;
+        do {
+            System.out.println("\n--- MENU PILA ---");
+            System.out.println("1. Meter elemento");
+            System.out.println("2. Sacar elemento");
+            System.out.println("3. Salir");
+            System.out.print("Elija una opción: ");
+            opcion = entrada.nextInt();
 
-        System.out.println("Pila creada. Cantidad: " + P1.cantidad() + ", faltan: " + P1.faltan());
+            switch (opcion) {
+                case 1:
+                    if (!pila.estaLlena()) {
+                        System.out.print("Ingrese el número a meter: ");
+                        int valor = entrada.nextInt();
+                        pila.meter(valor);
+                        System.out.println("Elemento " + valor + " agregado correctamente.");
+                    } else {
+                        System.out.println("La pila está llena. No se pueden agregar más elementos.");
+                    }
+                    break;
 
-        
-        P1.meter(5);
-        P1.meter(10);
+                case 2:
+                    if (!pila.estaVacia()) {
+                        int eliminado = pila.sacar();
+                        System.out.println("Elemento " + eliminado + " eliminado de la pila.");
+                    } else {
+                        System.out.println("La pila está vacía. No se pueden sacar elementos.");
+                    }
+                    break;
 
-        System.out.println("Después de meter 2 elementos -> Cantidad: " + P1.cantidad() + ", faltan: " + P1.faltan());
+                case 3:
+                    System.out.println("Saliendo del programa...");
+                    break;
 
-        Sc.close();
+                default:
+                    System.out.println("Opción inválida. Intente nuevamente.");
+            }
+
+            // Mostrar estado actual de la pila
+            System.out.println("→ Elementos en la pila: " + pila.cantidadElementos());
+            System.out.println("→ Lugares disponibles: " + pila.capacidadRestante());
+
+        } while (opcion != 3);
+
+        entrada.close();
     }
 }
-
-

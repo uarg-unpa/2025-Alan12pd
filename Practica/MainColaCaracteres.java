@@ -1,4 +1,4 @@
-package Tp4;
+package Practica;
 
 import java.util.Scanner;
 

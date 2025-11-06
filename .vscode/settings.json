@@ -6,5 +6,8 @@
         "uarg.pa.practica/_01_scanner",
         "TP1",
         ""
+    ],
+    "githubPullRequests.ignoredPullRequestBranches": [
+        "main"
     ]
 }

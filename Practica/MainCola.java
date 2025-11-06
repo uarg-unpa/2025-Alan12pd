@@ -41,9 +41,8 @@ public class MainCola {
                     if (cola.estaVacia()) {
                         System.out.println("Error: La cola está vacía. No hay tarea en el frente.");
                     } else {
-                        int frente = cola.mostrar ();
-                        
-                        System.out.println("Tarea en frente: (no implementado)");
+                        int frente = cola.mostrar();
+                        System.out.println("Tarea en frente: " + frente);
                     }
                     break;
                 }

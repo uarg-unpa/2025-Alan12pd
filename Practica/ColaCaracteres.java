@@ -1,4 +1,4 @@
-package Tp4;
+package Practica;
 
 public class ColaCaracteres {
     private char[] elementos;

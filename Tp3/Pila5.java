@@ -9,34 +9,42 @@ public class Pila5 {
         elementos = new int[MAX];
         cima = -1;
     }
-    public boolean estavacia(){
+    public class Pila{
+    private int[] elementos;
+    private int cima;
+    private final int MAX = 10;
+
+    public Pila() {
+        elementos = new int[MAX];
+        cima = -1;
+    }
+
+    public boolean estaVacia() {
         return (cima == -1);
     }
-    public boolean estaLlena(){
+
+    public boolean estaLlena() {
         return (cima == MAX - 1);
     }
-    public void meter(int elemento){
-        if (!estaLlena()) {
-            cima++;
-            elementos[cima] = elemento;
-        }
+
+    public void meter(int elem) {
+        cima++;
+        elementos[cima] = elem;
     }
-    public int sacar(){
-        if (!estavacia()) {
-            int elem = elementos[cima];
-            elementos[cima] = 0;
-            cima--;
-            return elem;
+
+    public int sacar() {
+        int elem = elementos[cima];
+        cima--;
+        return elem;
+    }
+    public int elementoCima(){
+        if(!estaVacia()){
+            return elementos[cima];
         }
-        return -1; 
-        }
-        public int elementoCima(){
-            if(!estavacia()){
-                return elementos[cima];
-            }
             return -1;
         }
 
+    }
 }
 
 

@@ -8,15 +8,12 @@ public class PilaReal {
    
     public PilaReal() {
            elementos = new double[MAX];
-        cima = -1;
+            cima = -1;
        
     }
-
     public boolean estaVacía(){
-    return (cima == -1);
+        return (cima == -1);
     }
-    }
-    
     public boolean estaLlena() {
         return (cima == MAX - 1);
     }

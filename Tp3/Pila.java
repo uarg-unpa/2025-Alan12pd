@@ -1,48 +1,40 @@
 package Tp3;
 
-public class Pila {
-    private int[] elementos; 
-    private final int MAX = 10; 
+public class Pila{
+    private int[] elementos;
+    private int cima;
+    private final int MAX = 10;
 
-    public Pila(){
+    public Pila() {
         elementos = new int[MAX];
-    }
-    public boolean estavacia(){
-        return (elementos[0]==0);
-    }
-    public boolean estallena(){
-        return (elementos[MAX - 1]!=0);
-    }
-    public void meter(int elementos){
-        for (int i = 0; i < MAX; i++) {
-            if (this.elementos[i]==0){
-                this.elementos[i]=elementos;
-                break;
-            }
-        }
-    }
-    public int sacar(){
-        for (int i = MAX - 1; i >= 0; i--) {
-            if (this.elementos[i]!=0){
-                int elem=this.elementos[i];
-                this.elementos[i]=0;
-                return elem;
-            }
-        }
-        return 0;
-    }
-    
-    public int cantidad(){
-        int cnt = 0;
-        for (int i = 0; i < MAX; i++){
-            if (this.elementos[i] != 0) cnt++;
-        }
-        return cnt;
+        cima = -1;
     }
 
-    public int faltan(){
-        return MAX - cantidad();
+    public boolean estaVacia() {
+        return (cima == -1);
     }
-    
 
+    public boolean estaLlena() {
+        return (cima == MAX - 1);
+    }
+
+    public void meter(int elem) {
+        cima++;
+        elementos[cima] = elem;
+    }
+
+    public int sacar() {
+        int elem = elementos[cima];
+        cima--;
+        return elem;
+    }
+
+    
+    public int cantidadElementos() {
+        return cima + 1; 
+    }
+
+    public int capacidadRestante() {
+        return MAX - (cima + 1);
+    }
 }

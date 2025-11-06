@@ -12,15 +12,15 @@ public class Cola{
             fin=0;
             }
             private int siguiente(int subind){
-                if (subind == MAX - 1)
+                if (subind == MAX - 1){
                     return 0;
-                else
+                }else{
                     return ++subind;
+                }
 
             }
             public boolean estaVacia(){
                 return fin== 0;
-
             }
             public boolean estaLlena(){
                 return fin == MAX;
@@ -30,11 +30,17 @@ public class Cola{
                 elementos[fin]= numero;
             }
             public int borrar(){
-                if (estaVacia())
+                if (estaVacia()){
                     return -1;
-                else{
+                }else{
                     frente = siguiente(frente);
                     return elementos[frente];
+                }
             }
+            public int mostrar(){
+                if (estaVacia())
+                    return -1;
+                else
+                    return elementos[siguiente(frente)];
             }
         }
