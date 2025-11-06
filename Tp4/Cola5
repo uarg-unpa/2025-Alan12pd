@@ -1,0 +1,66 @@
+package Tp4;
+
+public class Cola5 {
+    private final int maxcola = 10;
+    private int ultimo;
+    private int[] elementos;
+
+    public Cola() {
+        ultimo = 0;
+        elementos = new int[maxcola];
+    }
+
+    public boolean estaVacia() {
+        return (ultimo == 0);
+    }
+
+    public boolean estaLlena() {
+        return (ultimo == maxcola);
+    }
+
+    public void insertar(int numero) {
+        if (!estaLlena()) {
+            elementos[ultimo] = numero;
+            ultimo++;
+        }
+    }
+
+    public int borrar() {
+        if (!estaVacia()) {
+            int elem = elementos[0];
+            for (int i = 0; i < ultimo - 1; i++) {
+                elementos[i] = elementos[i + 1]; 
+            }
+            ultimo--;
+            return elem;
+        }
+        return -1;
+    }
+
+    
+    public void eliminarRepetidos() {
+        Cola aux = new Cola(); 
+
+        while (!estaVacia()) {
+            int elem = borrar();
+            boolean repetido = false;
+
+            int cantidadAux = aux.ultimo;
+            for (int i = 0; i < cantidadAux; i++) {
+                int actual = aux.borrar();
+                if (actual == elem) {
+                    repetido = true;
+                }
+                aux.insertar(actual);
+            }
+
+            if (!repetido) {
+                aux.insertar(elem);
+            }
+        }
+
+        while (!aux.estaVacia()) {
+            insertar(aux.borrar());
+        }
+    }
+}
